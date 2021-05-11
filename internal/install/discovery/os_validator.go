@@ -26,7 +26,7 @@ func (v *OsValidator) Execute(m *types.DiscoveryManifest) error {
 	if m.OS == "" {
 		return fmt.Errorf(noOperatingSystemDetected)
 	}
-	if !(strings.ToLower(m.OS) == "linux" || strings.ToLower(m.OS) == "windows") {
+	if !(strings.ToLower(m.OS) == "linux" || strings.ToLower(m.OS) == "windows" || strings.ToLower(m.OS) == "darwin") {
 		return fmt.Errorf(operatingSystemNotSupportedFormat, m.OS)
 	}
 	return nil
